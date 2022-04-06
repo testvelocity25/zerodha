@@ -1,0 +1,34 @@
+package Pom1;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import POM.Sign_up;
+import configuration.Configuration;
+
+public class SignUpPomRunner {
+public static void main(String[] args) {
+	
+		
+		System.setProperty("webdriver.chrome.driver", Configuration.driverPath);
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.facebook.com/signup");
+		driver.manage().window().maximize();
+		
+		Sign_Up_Pom s1 = new Sign_Up_Pom(driver);
+		
+		s1.enterFirstName();
+		s1.enterLastName();
+		s1.enteremail();
+		s1.Renteremail();
+		s1.enterNewPassword();
+		s1.selectDay();
+		s1.selectMonth();
+		s1.selectYear();
+		s1.ClickOnradioBtn();
+		s1.ClickOnsignup();
+			
+		
+		
+	}
+}
