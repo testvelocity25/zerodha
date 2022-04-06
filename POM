@@ -1,0 +1,73 @@
+package Pom1;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
+
+public class Sign_Up_Pom {
+	//Declaration
+	
+		@FindBy(xpath="//input[@name='firstname']") private WebElement FName;
+		
+		@FindBy(xpath="//input[@name='lastname']") private WebElement LName;
+		
+		@FindBy(xpath="//input[@name='reg_email__']") private WebElement email;
+		
+		@FindBy(xpath="(//input[@type='text'])[4]") private WebElement Remail;
+		
+		@FindBy(xpath="//input[@name='reg_passwd__']") private WebElement NewPassword;
+		
+		@FindBy(xpath="//select[@id='day']") private WebElement DropDownDay;
+		
+		@FindBy(xpath="//select[@id='month']") private WebElement DropDownMonth;
+		
+		@FindBy(xpath="//select[@id='year']") private WebElement DropDownYear;
+		
+		@FindBy(xpath="(//input[@type='radio'])[2]") private WebElement radioBtn;
+		
+		@FindBy(xpath="//button[@type='submit']") private WebElement signup;
+		
+		//Initialization
+		
+		Sign_Up_Pom(WebDriver driver){
+			
+			PageFactory.initElements(driver, this);
+		}
+			public void enterFirstName() {
+				FName.sendKeys("Nilesh");
+			}
+			
+			public void enterLastName() {
+				LName.sendKeys("Rathod");
+			}
+			public void enteremail() {
+				email.sendKeys("ratnodnillu25@gmail.com");
+			}
+			public void Renteremail() {
+				Remail.sendKeys("ratnodnillu25@gmail.com");
+			}
+			public void enterNewPassword() {
+				NewPassword.sendKeys("1432");
+			}
+			public void selectDay() {
+				Select s = new Select(DropDownDay);
+				s.selectByVisibleText("25");
+			}
+			public void selectMonth() {
+				Select s = new Select(DropDownMonth);
+				s.selectByVisibleText("Feb");
+			}
+			public void selectYear() {
+				Select s = new Select(DropDownYear);
+				s.selectByVisibleText("1995");
+			}
+			public void ClickOnradioBtn() {
+				radioBtn.click();
+			}
+			public void ClickOnsignup() {
+				signup.click();
+			}
+			
+}
