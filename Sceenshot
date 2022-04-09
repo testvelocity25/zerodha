@@ -1,0 +1,28 @@
+package Sceenshot.TEST;
+
+import java.io.File;
+import java.io.IOException;
+
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.io.FileHandler;
+
+import confi.configuration;
+
+public class Demo1 {
+	public static void main(String[] args) throws InterruptedException, IOException {
+		System.setProperty("webdriver.chrome.driver",configuration.driverPath);
+				WebDriver driver = new ChromeDriver();
+				driver.manage().window().maximize();
+driver.get("https://www.cricbuzz.com/live-cricket-scorecard/45951/kkr-vs-mi-14th-match-indian-premier-league-2022");
+  
+   
+	  File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+	  File f= new File("F:\\Auotomation Testing\\Sceenshots\\image.jpg");
+	  FileHandler.copy(src, f);
+
+      driver.quit();
+	}
+}
