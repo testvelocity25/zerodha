@@ -26,3 +26,5 @@ esy
 t
 d
 jt
+public static(){
+}
