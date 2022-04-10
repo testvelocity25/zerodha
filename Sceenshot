@@ -25,4 +25,5 @@ driver.get("https://www.cricbuzz.com/live-cricket-scorecard/45951/kkr-vs-mi-14th
 
       driver.quit();
 	}
+	public static void(){}
 }
